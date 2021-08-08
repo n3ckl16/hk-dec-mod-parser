@@ -1,0 +1,22 @@
+{
+  "name": "hk-dec-mod-parser",
+  "version": "1.1.0",
+  "description": "A parser for Hollow Knight's DecorationMaster Mod's json files.",
+  "keywords": [
+    "Hollow Knight",
+    "HK",
+    "hk",
+    "hk mod",
+    "hk mods",
+    "Decoration",
+    "Custom Level"
+  ],
+  "main": "parser.js",
+  "scripts": {
+    "start": "node parser.js"
+  },
+  "bin": "parser.js",
+  "private": true,
+  "author": "n3ckl16",
+  "license": "ISC"
+}
