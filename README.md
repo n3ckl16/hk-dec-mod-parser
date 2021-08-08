@@ -6,10 +6,10 @@ But what about old files? Manually interweave everything into other *json* files
 In this case, this code will be useful to you!
 
 ## Navigation
-- [Setup](#setup)
- - [Action](#action)
- - [Global](#global)
- - [Directory](#directory)
+* [Setup](#setup)
+ * [Action](#action)
+ * [Global](#global)
+ * [Directory](#directory)
 ## Setup
 Due to my lack of knowing of any other coding languages, everything is written in *JavaScript*, using **[Node JS](https://nodejs.org/)**
 
