@@ -15,8 +15,12 @@
   "scripts": {
     "start": "node parser.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n3ckl16/hk-dec-mod-parser.git"
+  },
   "bin": "parser.js",
   "private": true,
-  "author": "n3ckl16",
-  "license": "ISC"
+  "author": "n3ckl16 <88616251+n3ckl16@users.noreply.github.com>",
+  "license": "MIT"
 }

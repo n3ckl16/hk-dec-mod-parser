@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-process.env.UV_THREADPOOL_SIZE = process.env.NUMBER_OF_PROCESSORS
+process.env.UV_THREADPOOL_SIZE = 4
+process.env.UV_THREADPOOL_SIZE > process.env.NUMBER_OF_PROCESSORS
+  ? (process.env.UV_THREADPOOL_SIZE = process.env.NUMBER_OF_PROCESSORS)
+  : process.env.UV_THREADPOOL_SIZE
 const { writeFile, mkdir, readFile, readdir } = require("fs").promises
 const readline = require("readline")
 
@@ -21,7 +24,7 @@ rl.question(
     }
 
     rl.question(
-      "Type destanation of your global.json! Default is ./global.json\n",
+      "Type destination of your global.json! Default is ./global.json\n",
       ans1 => {
         ans1 = ans1.trim()
         if (ans1 === "" || ans1 === undefined || ans1 === null) {
@@ -30,7 +33,7 @@ rl.question(
           config.global = ans1
         }
         rl.question(
-          "Type destonation of the folder with multiple files! Default is ./DecorationMasterData\n",
+          "Type destination of the folder with multiple files! Default is ./DecorationMasterData\n",
           ans2 => {
             ans2 = ans2.trim()
             if (ans1 === "" || ans1 === undefined || ans1 === null) {

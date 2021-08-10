@@ -28,7 +28,7 @@ then you will need to *type* ***one*** of two possible actions:
 ### Global
 here you need to specify the path to a single file with all the changes (doesn't depend on [Action](#action), can be absolute or relative).
 
-By default `./global.json` (just skip by clicking Enter), it means the directory where excuting file resides and *global.json* is the name of the file you need.
+By default `./global.json` (just skip by clicking Enter), it means the directory where executing file resides and *global.json* is the name of the file you need.
 ### Directory
 and the path for output Directory. (doesn't depend on [Action](#action), can be absolute or relative)
 By default `./DecorationMasterData` (just skip by clicking Enter).
