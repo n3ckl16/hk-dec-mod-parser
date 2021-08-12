@@ -14,7 +14,7 @@ const rl = readline.createInterface({
   removeHistoryDuplicates: true,
 })
 rl.question(
-  "Which action you want to execute?\n parse - every single change goes into one .json file\n unparse - all changes go from single .json file to multiple\n",
+  "Which action you want to execute? | Какое действие вы хотите выполнить?\n parse - all changes go from single .json file to multiple, each one specific for its location | parse - все изменения идут из 1 .json файла в несколько, каждый специфичен для своей локации\n unparse - every single change goes into one .json file | unparse - каждое изменение идет в 1 .json файл\n",
   ans => {
     ans = ans.trim()
     if (ans === "" || ans === undefined || ans === null) {
@@ -24,19 +24,19 @@ rl.question(
     }
 
     rl.question(
-      "Type destination of your global.json! Default is ./global.json\n",
+      "\nType destination of your global.json! Default is ./global.json\nВведите путь к вашему global.json! По умолчанию: ./global.json\n",
       ans1 => {
         ans1 = ans1.trim()
-        if (ans1 === "" || ans1 === undefined || ans1 === null) {
+        if (!ans1) {
           config.global = "./global.json"
         } else {
           config.global = ans1
         }
         rl.question(
-          "Type destination of the folder with multiple files! Default is ./DecorationMasterData\n",
+          "\nType destination of the folder with multiple files! Default is ./DecorationMasterData\nВведите путь к папке с несколькими файлами! По умолчанию: ./DecorationMasterData\n",
           ans2 => {
             ans2 = ans2.trim()
-            if (ans1 === "" || ans1 === undefined || ans1 === null) {
+            if (!ans2) {
               config.path = "./DecorationMasterData"
             } else {
               config.path = ans2
