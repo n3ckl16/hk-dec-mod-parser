@@ -1,7 +1,7 @@
 {
   "name": "hk-dec-mod-parser",
-  "version": "1.1.5",
-  "description": "A parser for Hollow Knight's DecorationMaster Mod's json files.",
+  "version": "1.2.0",
+  "description": "Parser for Hollow Knight's DecorationMaster Mod's json files.",
   "keywords": [
     "Hollow Knight",
     "HK",
@@ -11,16 +11,26 @@
     "Decoration",
     "Custom Level"
   ],
-  "main": "parser.js",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "./js"
+  ],
   "scripts": {
-    "start": "node parser.js"
+    "start": "node index.js"
+  },
+  "bin": {
+    "hk-parser": "index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/n3ckl16/hk-dec-mod-parser.git"
   },
-  "bin": "parser.js",
   "private": true,
-  "author": "n3ckl16 <88616251+n3ckl16@users.noreply.github.com>",
-  "license": "MIT"
+  "author": {
+    "name": "n3ckl16",
+    "email": "88616251+n3ckl16@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "dependencies": {}
 }
