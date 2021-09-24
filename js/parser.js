@@ -1,11 +1,13 @@
 const { writeFile, mkdir, readFile, readdir } = require("fs").promises
-
+/**
+ * @method {@link parse}
+ * @method {@link unparse}
+ */
 class Parser {
-  constructor(sets) {
-    console.log(sets)
-    const { action, global, path, numOfSpaces } = sets
+  constructor({ action, global, path, numOfSpaces }) {
+    console.log({ action, global, path, numOfSpaces })
     if (typeof numOfSpaces !== "number")
-      return console.error(
+      throw console.error(
         new TypeError("Quantity of spaces is supposed to be a number!")
       )
 
@@ -16,12 +18,14 @@ class Parser {
     this.modsCount = 0
     this.locsCount = 0
 
-    try {
-      console.time("Done in")
-      this[action]()
-    } catch (err) {
-      if (err) return console.error(err)
-    }
+    console.time("Done in")
+    this[action]()
+      .then(() => {
+        console.timeEnd("Done in")
+      })
+      .catch(err => {
+        if (err) throw console.error(err)
+      })
   }
   async parse() {
     let data = await readFile(this.global).catch(err => {
@@ -56,7 +60,6 @@ class Parser {
     console.log(
       `All ${this.modsCount} modifications to ${this.locsCount} locations had been parsed to different files!`
     )
-    console.timeEnd("Done in")
   }
   async unparse() {
     const files = await readdir(this.path).catch(err => {
@@ -81,7 +84,6 @@ class Parser {
       )
     )
     console.log(`The global.json file has been created successfully!`)
-    console.timeEnd("Done in")
   }
 }
-module.exports = { Parser }
+module.exports = Parser
